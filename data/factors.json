@@ -1,0 +1,420 @@
+{
+  "version": 1,
+  "comment": "Доменный HR-адаптер МАРСИ-Job. Описание семантики — spec/SPEC.md §2–3. Все значения 0..1, кроме явно оговорённых (зарплата в RUB/мес, годы, минуты).",
+  "param_weights": {
+    "t": 0.15,
+    "m": 0.10,
+    "f": 0.10,
+    "e": 0.15,
+    "y": 0.25,
+    "g": 0.10,
+    "h": 0.15
+  },
+  "field_map": {
+    "comment": "Сопоставление сырых полей профиля и вакансии факторам. invert_candidate=true: значение кандидата инвертируется (толерантность = 1 − чувствительность).",
+    "hard_skills": {"candidate": "hard_skills", "vacancy": "hard_skills"},
+    "experience_years": {"candidate": "experience_years", "vacancy": "experience_years_min"},
+    "domain_experience": {"candidate": "domain_experience", "vacancy": "domain"},
+    "education_level": {"candidate": "education_level", "vacancy": "education_level_min"},
+    "languages": {"candidate": "languages", "vacancy": "languages"},
+    "portfolio": {"candidate": "portfolio", "vacancy": "portfolio_required"},
+    "management_experience": {"candidate": "management_experience", "vacancy": null},
+    "work_format": {"candidate": "work_format", "vacancy": "work_format"},
+    "schedule": {"candidate": "schedule", "vacancy": "schedule"},
+    "employment_type": {"candidate": "employment_type", "vacancy": "employment_type"},
+    "salary": {"candidate": "salary", "vacancy": "salary"},
+    "business_trips": {"candidate": "business_trips_tolerance", "vacancy": "business_trips_required"},
+    "relocation": {"candidate": "relocation", "vacancy": "relocation_supported"},
+    "location": {"candidate": "location", "vacancy": "location"},
+    "work_permit": {"candidate": "work_permit", "vacancy": "work_permit_required"},
+    "commute_max": {"candidate": "commute_max", "vacancy": "commute_minutes"},
+    "stress_tolerance": {"candidate": "stress_tolerance", "vacancy": "stress_level"},
+    "multitask_preference": {"candidate": "multitask_preference", "vacancy": "multitask_intensity"},
+    "autonomy_preference": {"candidate": "autonomy_preference", "vacancy": "micromanagement_degree"},
+    "team_size_preference": {"candidate": "team_size_preference", "vacancy": "team_size"},
+    "communication_style": {"candidate": "communication_style", "vacancy": "communication_mode"},
+    "motivation": {"candidate": "motivation", "vacancy": "motivation_offered"},
+    "risk_appetite": {"candidate": "risk_appetite", "vacancy": "stage_risk"},
+    "sensory_sensitivity": {"candidate": "sensory_sensitivity", "vacancy": "sensory_load", "invert_candidate": true},
+    "structure_need": {"candidate": "structure_need", "vacancy": "role_ambiguity"},
+    "learning_appetite": {"candidate": "learning_appetite", "vacancy": "learning_intensity"},
+    "interests": {"candidate": "interests", "vacancy": "product_tags"},
+    "culture_fit": {"candidate": "culture_fit", "vacancy": "culture"},
+    "mission_importance": {"candidate": "mission_importance", "vacancy": "mission_clarity"},
+    "career_trajectory": {"candidate": "career_trajectory", "vacancy": "trajectory_offered"},
+    "urgency": {"candidate": "urgency_months", "vacancy": "urgency_months"},
+    "start_date": {"candidate": "start_date_months", "vacancy": "start_date_required_months"}
+  },
+  "sensitive_groups": ["E", "F"],
+  "factors": [
+    {
+      "id": "hard_skills",
+      "group": "A",
+      "name_ru": "Хард-скиллы",
+      "type": "set",
+      "w0": 0.95,
+      "can_be_must": true,
+      "params": {"t": 0.5, "m": 0.2, "f": 0.9, "e": 0.8, "y": 0.95, "g": 0.7, "h": 0.8}
+    },
+    {
+      "id": "experience_years",
+      "group": "A",
+      "name_ru": "Опыт (лет)",
+      "type": "duration",
+      "w0": 0.70,
+      "can_be_must": true,
+      "params": {"t": 0.5, "m": 0.1, "f": 0.8, "e": 0.6, "y": 0.7, "g": 0.7, "h": 0.7},
+      "x_max": 20
+    },
+    {
+      "id": "domain_experience",
+      "group": "A",
+      "name_ru": "Отраслевой опыт",
+      "type": "tags",
+      "w0": 0.45,
+      "can_be_must": false,
+      "params": {"t": 0.4, "m": 0.2, "f": 0.7, "e": 0.6, "y": 0.4, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "education_level",
+      "group": "A",
+      "name_ru": "Образование",
+      "type": "categorical_ordered",
+      "w0": 0.30,
+      "can_be_must": true,
+      "order": ["none", "secondary", "vocational", "bachelor", "master", "phd"],
+      "params": {"t": 0.3, "m": 0.2, "f": 0.9, "e": 0.4, "y": 0.4, "g": 0.8, "h": 0.3}
+    },
+    {
+      "id": "languages",
+      "group": "A",
+      "name_ru": "Языки",
+      "type": "set",
+      "w0": 0.60,
+      "can_be_must": true,
+      "params": {"t": 0.4, "m": 0.5, "f": 0.8, "e": 0.6, "y": 0.7, "g": 0.6, "h": 0.6}
+    },
+    {
+      "id": "portfolio",
+      "group": "A",
+      "name_ru": "Портфолио",
+      "type": "scalar",
+      "w0": 0.35,
+      "can_be_must": true,
+      "params": {"t": 0.4, "m": 0.2, "f": 0.8, "e": 0.7, "y": 0.5, "g": 0.7, "h": 0.6}
+    },
+    {
+      "id": "management_experience",
+      "group": "A",
+      "name_ru": "Управленческий опыт",
+      "type": "management",
+      "w0": 0.35,
+      "can_be_must": false,
+      "params": {"t": 0.3, "m": 0.2, "f": 0.7, "e": 0.8, "y": 0.5, "g": 0.6, "h": 0.7}
+    },
+    {
+      "id": "work_format",
+      "group": "C",
+      "name_ru": "Формат работы",
+      "type": "categorical",
+      "w0": 0.85,
+      "can_be_must": true,
+      "values": ["office", "hybrid", "remote"],
+      "params": {"t": 0.5, "m": 1.0, "f": 0.9, "e": 0.7, "y": 0.8, "g": 0.8, "h": 0.6}
+    },
+    {
+      "id": "schedule",
+      "group": "C",
+      "name_ru": "График",
+      "type": "categorical",
+      "w0": 0.80,
+      "can_be_must": true,
+      "values": ["full_time", "flexible", "part_time", "shift", "night"],
+      "params": {"t": 0.6, "m": 0.9, "f": 0.9, "e": 0.7, "y": 0.8, "g": 0.8, "h": 0.6}
+    },
+    {
+      "id": "employment_type",
+      "group": "C",
+      "name_ru": "Тип оформления",
+      "type": "categorical",
+      "w0": 0.55,
+      "can_be_must": false,
+      "values": ["tk", "gph", "self_employed", "contractor"],
+      "params": {"t": 0.4, "m": 0.6, "f": 0.8, "e": 0.5, "y": 0.5, "g": 0.7, "h": 0.5}
+    },
+    {
+      "id": "salary",
+      "group": "C",
+      "name_ru": "Зарплатная вилка",
+      "type": "range_overlap",
+      "w0": 0.90,
+      "can_be_must": true,
+      "params": {"t": 0.7, "m": 0.5, "f": 0.7, "e": 0.9, "y": 0.9, "g": 0.6, "h": 1.0}
+    },
+    {
+      "id": "business_trips",
+      "group": "C",
+      "name_ru": "Командировки",
+      "type": "scalar_stress",
+      "k": 2,
+      "w0": 0.40,
+      "can_be_must": false,
+      "params": {"t": 0.3, "m": 0.7, "f": 0.7, "e": 0.3, "y": 0.5, "g": 0.6, "h": 0.4}
+    },
+    {
+      "id": "relocation",
+      "group": "C",
+      "name_ru": "Релокация",
+      "type": "categorical",
+      "w0": 0.65,
+      "can_be_must": false,
+      "values": ["no", "yes_with_package", "yes"],
+      "order_weak": true,
+      "params": {"t": 0.5, "m": 1.0, "f": 0.8, "e": 0.6, "y": 0.7, "g": 0.7, "h": 0.6}
+    },
+    {
+      "id": "location",
+      "group": "D",
+      "name_ru": "Локация и часовой пояс",
+      "type": "location",
+      "w0": 0.75,
+      "can_be_must": true,
+      "tz_window_hours": 3,
+      "params": {"t": 0.5, "m": 1.0, "f": 0.9, "e": 0.5, "y": 0.7, "g": 0.9, "h": 0.5}
+    },
+    {
+      "id": "work_permit",
+      "group": "D",
+      "name_ru": "Право работы (юрисдикции)",
+      "type": "categorical",
+      "w0": 1.00,
+      "can_be_must": true,
+      "params": {"t": 0.4, "m": 1.0, "f": 1.0, "e": 0.3, "y": 1.0, "g": 0.9, "h": 0.4}
+    },
+    {
+      "id": "commute_max",
+      "group": "D",
+      "name_ru": "Дорога до офиса (мин, log)",
+      "type": "duration",
+      "w0": 0.35,
+      "can_be_must": false,
+      "x_max": 180,
+      "applies_when": "office|hybrid",
+      "params": {"t": 0.4, "m": 1.0, "f": 0.6, "e": 0.5, "y": 0.4, "g": 0.6, "h": 0.4}
+    },
+    {
+      "id": "stress_tolerance",
+      "group": "E",
+      "name_ru": "Стрессоустойчивость",
+      "type": "scalar_stress",
+      "k": 2,
+      "w0": 0.60,
+      "sensitive": true,
+      "params": {"t": 0.4, "m": 0.4, "f": 0.5, "e": 0.6, "y": 0.7, "g": 0.6, "h": 0.6}
+    },
+    {
+      "id": "multitask_preference",
+      "group": "E",
+      "name_ru": "Предпочтение многозадачности",
+      "type": "scalar_stress",
+      "k": 2,
+      "w0": 0.45,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.3, "f": 0.5, "e": 0.5, "y": 0.5, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "autonomy_preference",
+      "group": "E",
+      "name_ru": "Потребность в автономии",
+      "type": "scalar_inverse",
+      "w0": 0.50,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.3, "f": 0.5, "e": 0.7, "y": 0.5, "g": 0.6, "h": 0.6}
+    },
+    {
+      "id": "team_size_preference",
+      "group": "E",
+      "name_ru": "Размер команды",
+      "type": "range_overlap",
+      "w0": 0.30,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.5, "f": 0.6, "e": 0.5, "y": 0.3, "g": 0.6, "h": 0.4}
+    },
+    {
+      "id": "communication_style",
+      "group": "E",
+      "name_ru": "Стиль коммуникации",
+      "type": "categorical",
+      "w0": 0.35,
+      "sensitive": true,
+      "values": ["sync", "async", "mixed"],
+      "params": {"t": 0.3, "m": 0.5, "f": 0.5, "e": 0.5, "y": 0.4, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "motivation",
+      "group": "E",
+      "name_ru": "Мотивация",
+      "type": "motivation_cosine",
+      "w0": 0.55,
+      "sensitive": true,
+      "values": ["money", "mission", "growth", "stability", "recognition"],
+      "params": {"t": 0.4, "m": 0.3, "f": 0.5, "e": 1.0, "y": 0.5, "g": 0.6, "h": 0.8}
+    },
+    {
+      "id": "risk_appetite",
+      "group": "E",
+      "name_ru": "Аппетит к риску",
+      "type": "scalar_stress",
+      "k": 2,
+      "w0": 0.35,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.3, "f": 0.5, "e": 0.7, "y": 0.4, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "sensory_sensitivity",
+      "group": "F",
+      "name_ru": "Сенсорная чувствительность",
+      "type": "scalar_stress",
+      "k": 3,
+      "w0": 0.55,
+      "sensitive": true,
+      "invert_candidate": true,
+      "params": {"t": 0.3, "m": 0.6, "f": 0.5, "e": 0.6, "y": 0.8, "g": 0.6, "h": 0.6}
+    },
+    {
+      "id": "structure_need",
+      "group": "F",
+      "name_ru": "Потребность в структуре",
+      "type": "scalar_inverse",
+      "w0": 0.45,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.4, "f": 0.5, "e": 0.6, "y": 0.6, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "learning_appetite",
+      "group": "F",
+      "name_ru": "Аппетит к обучению",
+      "type": "scalar",
+      "w0": 0.30,
+      "sensitive": true,
+      "params": {"t": 0.3, "m": 0.2, "f": 0.5, "e": 0.8, "y": 0.3, "g": 0.6, "h": 0.7}
+    },
+    {
+      "id": "interests",
+      "group": "G",
+      "name_ru": "Интересы",
+      "type": "tags",
+      "w0": 0.25,
+      "can_be_must": false,
+      "params": {"t": 0.3, "m": 0.2, "f": 0.6, "e": 0.8, "y": 0.2, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "culture_fit",
+      "group": "G",
+      "name_ru": "Культура компании",
+      "type": "categorical",
+      "w0": 0.30,
+      "can_be_must": false,
+      "values": ["formal", "casual"],
+      "params": {"t": 0.3, "m": 0.5, "f": 0.6, "e": 0.6, "y": 0.3, "g": 0.6, "h": 0.5}
+    },
+    {
+      "id": "mission_importance",
+      "group": "G",
+      "name_ru": "Важность миссии",
+      "type": "scalar",
+      "w0": 0.25,
+      "can_be_must": false,
+      "params": {"t": 0.3, "m": 0.2, "f": 0.5, "e": 0.9, "y": 0.2, "g": 0.5, "h": 0.7}
+    },
+    {
+      "id": "career_trajectory",
+      "group": "J",
+      "name_ru": "Карьерная траектория",
+      "type": "categorical",
+      "w0": 0.45,
+      "can_be_must": false,
+      "values": ["deep", "broad", "management", "stability"],
+      "params": {"t": 0.4, "m": 0.2, "f": 0.6, "e": 1.0, "y": 0.4, "g": 0.7, "h": 0.8}
+    },
+    {
+      "id": "urgency",
+      "group": "K",
+      "name_ru": "Срочность поиска",
+      "type": "duration",
+      "w0": 0.50,
+      "can_be_must": false,
+      "x_max": 12,
+      "inverse": true,
+      "params": {"t": 1.0, "m": 0.2, "f": 0.7, "e": 0.6, "y": 0.8, "g": 0.7, "h": 0.6}
+    },
+    {
+      "id": "start_date",
+      "group": "K",
+      "name_ru": "Срок выхода",
+      "type": "duration",
+      "w0": 0.40,
+      "can_be_must": false,
+      "x_max": 6,
+      "params": {"t": 0.9, "m": 0.4, "f": 0.7, "e": 0.5, "y": 0.6, "g": 0.7, "h": 0.5}
+    }
+  ],
+  "phi_only_fields": [
+    {
+      "id": "neuro_profile",
+      "name_ru": "Нейропрофиль (самоотчёт)",
+      "values": ["adhd", "autism", "dyslexia", "none"],
+      "sensitive": true,
+      "scored": false,
+      "comment": "Напрямую не скорится; участвует только в правилах Φ и в агрегированном индексе совместимости среды (0..1), который виден работодателю."
+    },
+    {
+      "id": "family_constraints",
+      "name_ru": "Семейные ограничения (самоотчёт)",
+      "values": ["small_children", "dependents", "none"],
+      "sensitive": true,
+      "scored": false,
+      "comment": "Только для Φ-правил (гибкий график, part-time); работодателю не показывается."
+    }
+  ],
+  "vacancy_attributes": [
+    {"id": "vacancy_criticality", "name_ru": "Критичность простоя ставки (y вакансии)", "range": [0, 1], "default": 0.5},
+    {"id": "vacancy_clarity", "name_ru": "Заполненность/ясность карточки (g вакансии)", "range": [0, 1], "default": 0.7},
+    {"id": "sensory_load", "name_ru": "Сенсорная нагрузка среды (open-space, шум)", "range": [0, 1], "default": 0.3, "maps_factor": "sensory_sensitivity"},
+    {"id": "role_ambiguity", "name_ru": "Неопределённость роли", "range": [0, 1], "default": 0.3, "maps_factor": "structure_need"},
+    {"id": "stress_level", "name_ru": "Уровень стресса роли", "range": [0, 1], "default": 0.4, "maps_factor": "stress_tolerance"},
+    {"id": "multitask_intensity", "name_ru": "Интенсивность многозадачности", "range": [0, 1], "default": 0.4, "maps_factor": "multitask_preference"},
+    {"id": "micromanagement_degree", "name_ru": "Степень микроменеджмента", "range": [0, 1], "default": 0.3, "maps_factor": "autonomy_preference"},
+    {"id": "learning_intensity", "name_ru": "Интенсивность обучения на роли", "range": [0, 1], "default": 0.4, "maps_factor": "learning_appetite"},
+    {"id": "stage_risk", "name_ru": "Риск стадии компании", "range": [0, 1], "default": 0.4, "maps_factor": "risk_appetite"},
+    {"id": "mission_clarity", "name_ru": "Ясность миссии продукта", "range": [0, 1], "default": 0.5, "maps_factor": "mission_importance"},
+    {"id": "team_size", "name_ru": "Размер команды (чел.)", "range": [1, 500], "default": 8, "maps_factor": "team_size_preference"},
+    {"id": "communication_mode", "name_ru": "Режим коммуникации", "values": ["sync", "async", "mixed"], "default": "mixed", "maps_factor": "communication_style"},
+    {"id": "culture", "name_ru": "Культура", "values": ["formal", "casual"], "default": "casual", "maps_factor": "culture_fit"},
+    {"id": "trajectory_offered", "name_ru": "Траектория роли", "values": ["deep", "broad", "management", "stability"], "default": "broad", "maps_factor": "career_trajectory"},
+    {"id": "motivation_offered", "name_ru": "Что компания даёт (веса)", "values": ["money", "mission", "growth", "stability", "recognition"], "default": {"money": 0.6, "growth": 0.6, "stability": 0.5, "mission": 0.4, "recognition": 0.3}, "maps_factor": "motivation"},
+    {"id": "training_offered", "name_ru": "Обучение за счёт компании", "type": "boolean", "default": false, "comment": "Влияет на r и Φ (синергия с learning_appetite и сменой профессии)"}
+  ],
+  "bands": {
+    "strong": 0.75,
+    "decent": 0.55,
+    "conditional": 0.40,
+    "hidden_below": 0.40
+  },
+  "epsilon": {
+    "per_factor_missing": 0.15,
+    "total_cap": 0.35,
+    "weights": {"cand_missing": 0.5, "vac_missing": 0.3, "self_report_only": 0.2}
+  },
+  "resource_costs": {
+    "relocation_no_package": 0.80,
+    "relocation_with_package": 0.35,
+    "must_skill_training": 0.50,
+    "nice_skill_training": 0.15,
+    "schedule_compromise": 0.30,
+    "format_compromise": 0.30,
+    "salary_compromise": 0.25,
+    "commute_overrun_coef": 0.20,
+    "junior_on_senior_task": 0.40
+  }
+}

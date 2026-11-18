@@ -1,0 +1,183 @@
+{
+  "currency": "RUB",
+  "limits": {
+    "candidate_free_matches_per_day": 3,
+    "candidate_plus_matches_per_day": 20,
+    "employer_free_candidates": 5,
+    "employer_free_vacancy_days": 30,
+    "employer_free_invites_first": 3,
+    "partner_vacancy_days": 365,
+    "pro_active_vacancies": 3,
+    "pro_invites_per_month": 50,
+    "alert_score_min": 0.75,
+    "alert_max_per_day": 5,
+    "broadcast_top_n": 100,
+    "broadcast_max_per_candidate_per_day": 3,
+    "broadcast_max_per_vacancy_per_day": 1,
+    "voice_free_per_day": 1,
+    "subscription_remind_days": 3
+  },
+  "launch_promo": {
+    "enabled": false,
+    "sku": "why_report",
+    "price_kop": 29900,
+    "until": "2026-12-31"
+  },
+  "skus": [
+    {
+      "id": "why_report",
+      "audience": "candidate",
+      "type": "oneoff",
+      "price_kop": 34900,
+      "title": "Разбор «Почему не зовут»",
+      "receipt_name": "Разбор подбора МАРСИ-Job",
+      "description": "Полный разбор: первопричина, карта пробелов, план изменений, альтернативы"
+    },
+    {
+      "id": "resume_audit",
+      "audience": "candidate",
+      "type": "service",
+      "price_kop": 19900,
+      "title": "Аудит резюме",
+      "receipt_name": "Аудит резюме МАРСИ-Job",
+      "description": "Скор 0–100, разбор по 7 измерениям с правками и оценкой +N к скору"
+    },
+    {
+      "id": "plus_month",
+      "audience": "candidate",
+      "type": "subscription",
+      "days": 30,
+      "price_kop": 19900,
+      "title": "Подписка Plus (30 дней)",
+      "receipt_name": "Подписка Plus МАРСИ-Job",
+      "description": "Топ-20 матчей/сутки, полные карточки, алерты новых матчей ≥75%, безлимитный голос"
+    },
+    {
+      "id": "mock_interview",
+      "audience": "candidate",
+      "type": "service",
+      "price_kop": 29900,
+      "title": "Мок-интервью (1 сессия)",
+      "receipt_name": "Мок-интервью МАРСИ-Job",
+      "description": "Собеседование с ИИ по вашим слабым местам + отчёт со разбором"
+    },
+    {
+      "id": "mock_interview_3",
+      "audience": "candidate",
+      "type": "consumable",
+      "quantity": 3,
+      "price_kop": 79900,
+      "title": "Мок-интервью ×3",
+      "receipt_name": "Мок-интервью ×3 МАРСИ-Job",
+      "description": "3 сессии — тренируйтесь с разных ракурсов"
+    },
+    {
+      "id": "roadmap",
+      "audience": "candidate",
+      "type": "service",
+      "price_kop": 34900,
+      "title": "Дорожная карта «+X очков»",
+      "receipt_name": "Дорожная карта МАРСИ-Job",
+      "description": "План на 3 месяца: что поднять, где взять, +Δ к скору"
+    },
+    {
+      "id": "invite_5",
+      "audience": "employer",
+      "type": "consumable",
+      "quantity": 5,
+      "price_kop": 49000,
+      "title": "5 приглашений",
+      "receipt_name": "Пакет приглашений 5",
+      "description": "+5 приглашений кандидатам (с контактом при их согласии)"
+    },
+    {
+      "id": "invite_15",
+      "audience": "employer",
+      "type": "consumable",
+      "quantity": 15,
+      "price_kop": 129000,
+      "title": "15 приглашений",
+      "receipt_name": "Пакет приглашений 15",
+      "description": "+15 приглашений кандидатам"
+    },
+    {
+      "id": "invite_40",
+      "audience": "employer",
+      "type": "consumable",
+      "quantity": 40,
+      "price_kop": 299000,
+      "title": "40 приглашений",
+      "receipt_name": "Пакет приглашений 40",
+      "description": "+40 приглашений кандидатам"
+    },
+    {
+      "id": "target_broadcast",
+      "audience": "employer",
+      "type": "service",
+      "price_kop": 99000,
+      "title": "Таргет-рассылка вакансии (топ-100)",
+      "receipt_name": "Таргет-рассылка вакансии",
+      "description": "Персональное сообщение топ-100 совместимым кандидатам"
+    },
+    {
+      "id": "pro_month",
+      "audience": "employer",
+      "type": "subscription",
+      "days": 30,
+      "price_kop": 490000,
+      "title": "Подписка Pro (30 дней)",
+      "receipt_name": "Подписка Pro МАРСИ-Job",
+      "description": "3 активные вакансии, 50 приглашений/мес, скоринг-отчёты, бейдж скорости"
+    },
+    {
+      "id": "business_month",
+      "audience": "employer",
+      "type": "subscription",
+      "days": 30,
+      "price_kop": 1490000,
+      "hidden": true,
+      "title": "Подписка Business (30 дней)",
+      "receipt_name": "Подписка Business МАРСИ-Job",
+      "description": "Выдаётся администратором"
+    }
+  ],
+  "referral": {
+    "reward_days_plus": 7,
+    "max_credits_per_month": 5,
+    "reward_on": "onboarding_complete",
+    "code_length": 8
+  },
+  "freshness": {
+    "fresh_days": 7,
+    "stale_days": 30,
+    "auto_archive_days": 45,
+    "min_fallback_results": 3,
+    "reactivate_cooldown_days": 30
+  },
+  "resume_audit": {
+    "rerun_window_hours": 48,
+    "dimensions": {
+      "completeness": 0.2,
+      "verification": 0.15,
+      "portfolio": 0.15,
+      "experience": 0.15,
+      "positioning": 0.15,
+      "format": 0.1,
+      "languages": 0.1
+    }
+  },
+  "mock_interview": {
+    "questions_max": 7,
+    "followups_per_question": 1,
+    "session_ttl_min": 45,
+    "min_answers_for_report": 3,
+    "gen_max_tokens": 200,
+    "report_max_tokens": 800,
+    "llm_required": true
+  },
+  "roadmap": {
+    "horizon_months": 3,
+    "recalc_window_days": 30,
+    "max_items_per_month": 4
+  }
+}

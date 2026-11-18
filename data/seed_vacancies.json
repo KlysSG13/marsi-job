@@ -1,0 +1,1185 @@
+[
+ {
+  "id": "S01",
+  "title": "Junior Python-разработчик, удалённо, гибкий график",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.6,
+    "must": true
+   },
+   "git": {
+    "req_level": 0.5,
+    "must": false
+   }
+  },
+  "experience_years_min": 1,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "remote",
+  "schedule": "flexible",
+  "employment_type": "tk",
+  "salary": {
+   "min": 90000,
+   "max": 140000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.2,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.4,
+  "multitask_intensity": 0.4,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.6,
+  "stage_risk": 0.4,
+  "mission_clarity": 0.5,
+  "team_size": 6,
+  "communication_mode": "async",
+  "culture": "casual",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.6,
+   "growth": 0.8,
+   "stability": 0.5,
+   "mission": 0.4,
+   "recognition": 0.4
+  },
+  "training_offered": true,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "games",
+   "data"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S02",
+  "title": "Python-разработчик, гибрид (Казань), полный день",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.6,
+    "must": true
+   },
+   "git": {
+    "req_level": 0.5,
+    "must": false
+   }
+  },
+  "experience_years_min": 1,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.3,
+  "work_format": "hybrid",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 100000,
+   "max": 150000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": false,
+  "location": {
+   "city": "Казань",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 45,
+  "sensory_load": 0.5,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.6,
+  "micromanagement_degree": 0.5,
+  "learning_intensity": 0.4,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.4,
+  "team_size": 15,
+  "communication_mode": "sync",
+  "culture": "formal",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.7,
+   "growth": 0.5,
+   "stability": 0.7,
+   "mission": 0.3,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.7,
+  "product_tags": [
+   "bank"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S03",
+  "title": "Разработчик, офис (open-space), строгий график 9–18",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 1,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.3,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 90000,
+   "max": 130000
+  },
+  "business_trips_required": 0.2,
+  "relocation_supported": false,
+  "location": {
+   "city": "Казань",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 50,
+  "sensory_load": 0.9,
+  "role_ambiguity": 0.3,
+  "stress_level": 0.6,
+  "multitask_intensity": 0.7,
+  "micromanagement_degree": 0.6,
+  "learning_intensity": 0.3,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.4,
+  "team_size": 40,
+  "communication_mode": "sync",
+  "culture": "formal",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.6,
+   "growth": 0.4,
+   "stability": 0.7,
+   "mission": 0.3,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.6,
+  "product_tags": [
+   "outsourcing"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S04",
+  "title": "Senior Backend-разработчик (Python), Москва, релокационный пакет",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.8,
+    "must": true
+   },
+   "docker": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "kubernetes": {
+    "req_level": 0.6,
+    "must": false
+   }
+  },
+  "experience_years_min": 6,
+  "domain": "fintech",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   },
+   "english": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.5,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 380000,
+   "max": 480000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": true,
+  "location": {
+   "city": "Москва",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 40,
+  "sensory_load": 0.4,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.6,
+  "multitask_intensity": 0.5,
+  "micromanagement_degree": 0.2,
+  "learning_intensity": 0.5,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.6,
+  "team_size": 10,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.9,
+   "growth": 0.7,
+   "stability": 0.7,
+   "mission": 0.5,
+   "recognition": 0.6
+  },
+  "training_offered": true,
+  "vacancy_criticality": 0.8,
+  "vacancy_clarity": 0.9,
+  "product_tags": [
+   "fintech",
+   "distributed_systems"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S05",
+  "title": "Senior Python-разработчик, 100% удалёнка",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.8,
+    "must": true
+   },
+   "postgres": {
+    "req_level": 0.7,
+    "must": true
+   }
+  },
+  "experience_years_min": 5,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   },
+   "english": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "remote",
+  "schedule": "flexible",
+  "employment_type": "tk",
+  "salary": {
+   "min": 300000,
+   "max": 400000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.2,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.5,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.5,
+  "stage_risk": 0.5,
+  "mission_clarity": 0.5,
+  "team_size": 12,
+  "communication_mode": "async",
+  "culture": "casual",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.8,
+   "growth": 0.6,
+   "stability": 0.5,
+   "mission": 0.4,
+   "recognition": 0.4
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.6,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "saas"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S06",
+  "title": "Ведущий разработчик, Казань (зарплата ниже рынка кандидата на 40%)",
+  "hard_skills": {
+   "python": {
+    "req_level": 0.8,
+    "must": true
+   },
+   "docker": {
+    "req_level": 0.6,
+    "must": false
+   }
+  },
+  "experience_years_min": 5,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 200000,
+   "max": 260000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": false,
+  "location": {
+   "city": "Казань",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 35,
+  "sensory_load": 0.4,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.4,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.4,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.5,
+  "team_size": 8,
+  "communication_mode": "mixed",
+  "culture": "formal",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.5,
+   "growth": 0.5,
+   "stability": 0.8,
+   "mission": 0.3,
+   "recognition": 0.4
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.7,
+  "product_tags": [
+   "industry"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S07",
+  "title": "Стажёр-инженер по тестированию (QA) с обучением, удалённо",
+  "hard_skills": {
+   "manual_testing": {
+    "req_level": 0.4,
+    "must": true
+   },
+   "docs": {
+    "req_level": 0.5,
+    "must": false
+   }
+  },
+  "experience_years_min": 0,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.2,
+  "work_format": "remote",
+  "schedule": "flexible",
+  "employment_type": "tk",
+  "salary": {
+   "min": 65000,
+   "max": 90000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 7
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.2,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.3,
+  "multitask_intensity": 0.4,
+  "micromanagement_degree": 0.4,
+  "learning_intensity": 0.9,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.6,
+  "team_size": 5,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.4,
+   "growth": 0.9,
+   "stability": 0.6,
+   "mission": 0.6,
+   "recognition": 0.5
+  },
+  "training_offered": true,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.9,
+  "product_tags": [
+   "education",
+   "it"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S08",
+  "title": "Middle QA-инженер (автотесты)",
+  "hard_skills": {
+   "selenium": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "api_testing": {
+    "req_level": 0.6,
+    "must": true
+   },
+   "manual_testing": {
+    "req_level": 0.6,
+    "must": false
+   }
+  },
+  "experience_years_min": 2,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   },
+   "english": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.5,
+  "work_format": "hybrid",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 140000,
+   "max": 190000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": false,
+  "location": {
+   "city": "Новосибирск",
+   "tz": 7
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 40,
+  "sensory_load": 0.4,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.6,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.5,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.5,
+  "team_size": 9,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.7,
+   "growth": 0.6,
+   "stability": 0.6,
+   "mission": 0.4,
+   "recognition": 0.4
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.6,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "ecommerce"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S09",
+  "title": "Офис-менеджер (полный день, офис)",
+  "hard_skills": {
+   "docs": {
+    "req_level": 0.5,
+    "must": true
+   }
+  },
+  "experience_years_min": 1,
+  "domain": "education",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.0,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 55000,
+   "max": 70000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": "Новосибирск",
+   "tz": 7
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 45,
+  "sensory_load": 0.6,
+  "role_ambiguity": 0.3,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.8,
+  "micromanagement_degree": 0.5,
+  "learning_intensity": 0.2,
+  "stage_risk": 0.2,
+  "mission_clarity": 0.4,
+  "team_size": 25,
+  "communication_mode": "sync",
+  "culture": "formal",
+  "trajectory_offered": "stability",
+  "motivation_offered": {
+   "money": 0.4,
+   "growth": 0.2,
+   "stability": 0.8,
+   "mission": 0.2,
+   "recognition": 0.2
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.7,
+  "product_tags": [
+   "services"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S10",
+  "title": "Контент-менеджер (part-time, удалённо)",
+  "hard_skills": {
+   "content_writing": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "smm": {
+    "req_level": 0.5,
+    "must": false
+   }
+  },
+  "experience_years_min": 2,
+  "domain": "marketing",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "remote",
+  "schedule": "part_time",
+  "employment_type": "gph",
+  "salary": {
+   "min": 55000,
+   "max": 75000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 5
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.1,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.3,
+  "multitask_intensity": 0.3,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.4,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.5,
+  "team_size": 4,
+  "communication_mode": "async",
+  "culture": "casual",
+  "trajectory_offered": "stability",
+  "motivation_offered": {
+   "money": 0.5,
+   "growth": 0.4,
+   "stability": 0.8,
+   "mission": 0.4,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "texts",
+   "marketing"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S11",
+  "title": "Контент-менеджер (полный день, офис)",
+  "hard_skills": {
+   "content_writing": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "seo": {
+    "req_level": 0.4,
+    "must": false
+   }
+  },
+  "experience_years_min": 2,
+  "domain": "marketing",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 90000,
+   "max": 120000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": false,
+  "location": {
+   "city": "Екатеринбург",
+   "tz": 5
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 45,
+  "sensory_load": 0.6,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.6,
+  "multitask_intensity": 0.6,
+  "micromanagement_degree": 0.4,
+  "learning_intensity": 0.4,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.5,
+  "team_size": 12,
+  "communication_mode": "sync",
+  "culture": "formal",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.7,
+   "growth": 0.6,
+   "stability": 0.6,
+   "mission": 0.4,
+   "recognition": 0.4
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "marketing"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S12",
+  "title": "Копирайтер (part-time, гибрид, офис на окраине)",
+  "hard_skills": {
+   "content_writing": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 1,
+  "domain": "marketing",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.3,
+  "work_format": "hybrid",
+  "schedule": "part_time",
+  "employment_type": "self_employed",
+  "salary": {
+   "min": 45000,
+   "max": 70000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": "Екатеринбург",
+   "tz": 5
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 70,
+  "sensory_load": 0.6,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.4,
+  "multitask_intensity": 0.4,
+  "micromanagement_degree": 0.4,
+  "learning_intensity": 0.3,
+  "stage_risk": 0.4,
+  "mission_clarity": 0.4,
+  "team_size": 6,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "stability",
+  "motivation_offered": {
+   "money": 0.5,
+   "growth": 0.3,
+   "stability": 0.7,
+   "mission": 0.3,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.7,
+  "product_tags": [
+   "texts"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S13",
+  "title": "Data-аналитик, удалённо, тихая асинхронная команда",
+  "hard_skills": {
+   "sql": {
+    "req_level": 0.8,
+    "must": true
+   },
+   "python": {
+    "req_level": 0.6,
+    "must": true
+   },
+   "tableau": {
+    "req_level": 0.5,
+    "must": false
+   }
+  },
+  "experience_years_min": 4,
+  "domain": "analytics",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   },
+   "english": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.5,
+  "work_format": "remote",
+  "schedule": "flexible",
+  "employment_type": "tk",
+  "salary": {
+   "min": 240000,
+   "max": 320000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.1,
+  "role_ambiguity": 0.3,
+  "stress_level": 0.4,
+  "multitask_intensity": 0.3,
+  "micromanagement_degree": 0.2,
+  "learning_intensity": 0.5,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.7,
+  "team_size": 5,
+  "communication_mode": "async",
+  "culture": "casual",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.7,
+   "growth": 0.5,
+   "stability": 0.7,
+   "mission": 0.6,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.6,
+  "vacancy_clarity": 0.9,
+  "product_tags": [
+   "data",
+   "research"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S14",
+  "title": "BI-аналитик, гибрид (2 дня в офисе)",
+  "hard_skills": {
+   "sql": {
+    "req_level": 0.8,
+    "must": true
+   },
+   "tableau": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 3,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "hybrid",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 200000,
+   "max": 280000
+  },
+  "business_trips_required": 0.1,
+  "relocation_supported": false,
+  "location": {
+   "city": "Санкт-Петербург",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 35,
+  "sensory_load": 0.5,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.5,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.4,
+  "stage_risk": 0.3,
+  "mission_clarity": 0.5,
+  "team_size": 8,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.6,
+   "growth": 0.6,
+   "stability": 0.6,
+   "mission": 0.4,
+   "recognition": 0.4
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "logistics"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 2
+ },
+ {
+  "id": "S15",
+  "title": "Продуктовый аналитик, open-space, ежедневные созвоны",
+  "hard_skills": {
+   "sql": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "python": {
+    "req_level": 0.5,
+    "must": true
+   },
+   "statistics": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 3,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   },
+   "english": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.4,
+  "work_format": "office",
+  "schedule": "full_time",
+  "employment_type": "tk",
+  "salary": {
+   "min": 230000,
+   "max": 310000
+  },
+  "business_trips_required": 0.2,
+  "relocation_supported": false,
+  "location": {
+   "city": "Санкт-Петербург",
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": 45,
+  "sensory_load": 0.9,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.7,
+  "multitask_intensity": 0.8,
+  "micromanagement_degree": 0.4,
+  "learning_intensity": 0.5,
+  "stage_risk": 0.5,
+  "mission_clarity": 0.5,
+  "team_size": 30,
+  "communication_mode": "sync",
+  "culture": "casual",
+  "trajectory_offered": "broad",
+  "motivation_offered": {
+   "money": 0.8,
+   "growth": 0.7,
+   "stability": 0.5,
+   "mission": 0.4,
+   "recognition": 0.6
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.7,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "ecommerce"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S-DSGN",
+  "title": "Продуктовый дизайнер, удалённо, гибкий график",
+  "hard_skills": {
+   "figma": {
+    "req_level": 0.7,
+    "must": true
+   },
+   "ui_ux": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 2,
+  "domain": "it",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.6,
+  "work_format": "remote",
+  "schedule": "flexible",
+  "employment_type": "tk",
+  "salary": {
+   "min": 150000,
+   "max": 220000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.2,
+  "role_ambiguity": 0.5,
+  "stress_level": 0.4,
+  "multitask_intensity": 0.5,
+  "micromanagement_degree": 0.3,
+  "learning_intensity": 0.6,
+  "stage_risk": 0.4,
+  "mission_clarity": 0.6,
+  "team_size": 7,
+  "communication_mode": "mixed",
+  "culture": "casual",
+  "trajectory_offered": "deep",
+  "motivation_offered": {
+   "money": 0.7,
+   "growth": 0.7,
+   "stability": 0.5,
+   "mission": 0.5,
+   "recognition": 0.5
+  },
+  "training_offered": true,
+  "vacancy_criticality": 0.5,
+  "vacancy_clarity": 0.8,
+  "product_tags": [
+   "design",
+   "automation"
+  ],
+  "urgency_months": 2,
+  "start_date_required_months": 1
+ },
+ {
+  "id": "S-SPRT",
+  "title": "Специалист поддержки (part-time, удалённо, тихие смены)",
+  "hard_skills": {
+   "docs": {
+    "req_level": 0.6,
+    "must": true
+   }
+  },
+  "experience_years_min": 0,
+  "domain": "services",
+  "education_level_min": null,
+  "languages": {
+   "russian": {
+    "req_level": 0.9,
+    "must": true
+   }
+  },
+  "portfolio_required": 0.0,
+  "work_format": "remote",
+  "schedule": "part_time",
+  "employment_type": "self_employed",
+  "salary": {
+   "min": 45000,
+   "max": 70000
+  },
+  "business_trips_required": 0.0,
+  "relocation_supported": false,
+  "location": {
+   "city": null,
+   "tz": 3
+  },
+  "work_permit_required": [
+   "RU"
+  ],
+  "commute_minutes": null,
+  "sensory_load": 0.2,
+  "role_ambiguity": 0.4,
+  "stress_level": 0.5,
+  "multitask_intensity": 0.4,
+  "micromanagement_degree": 0.4,
+  "learning_intensity": 0.3,
+  "stage_risk": 0.2,
+  "mission_clarity": 0.5,
+  "team_size": 5,
+  "communication_mode": "async",
+  "culture": "casual",
+  "trajectory_offered": "stability",
+  "motivation_offered": {
+   "money": 0.4,
+   "growth": 0.3,
+   "stability": 0.8,
+   "mission": 0.4,
+   "recognition": 0.3
+  },
+  "training_offered": false,
+  "vacancy_criticality": 0.4,
+  "vacancy_clarity": 0.7,
+  "product_tags": [
+   "services",
+   "texts"
+  ],
+  "urgency_months": 3,
+  "start_date_required_months": 1
+ }
+]

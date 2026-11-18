@@ -1,0 +1,285 @@
+{
+  "version": 1,
+  "comment": "Φ-матрица МАРСИ-Job. Семантика по МАРСИ-DN1 §6.1: phi>0 синергия, phi<0 конфликт, block=true — абсолютное противопоказание (Φ=−∞). Эффект правила умножается на min(W_a, W_b) сторон-факторов.",
+  "rules": [
+    {
+      "id": "PH-001",
+      "comment": "СДВГ + гибкий график → синергия (структура дня под контроль человека)",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "adhd"},
+        {"field": "schedule", "op": "in", "value": ["flexible"]}
+      ],
+      "phi": 0.12
+    },
+    {
+      "id": "PH-002",
+      "comment": "СДВГ + сменный/ночный график → конфликт циркадных ритмов",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "adhd"},
+        {"field": "schedule", "op": "in", "value": ["night", "shift"]}
+      ],
+      "phi": -0.15
+    },
+    {
+      "id": "PH-003",
+      "comment": "Аутистический спектр + тихая среда/удалёнка → синергия среды",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "autism"},
+        {"field": "sensory_load", "op": "lte", "value": 0.3},
+        {"field": "work_format", "op": "eq", "value": "remote"}
+      ],
+      "phi": 0.14
+    },
+    {
+      "id": "PH-004",
+      "comment": "Аутистический спектр + высокая сенсорная нагрузка → сильный конфликт",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "autism"},
+        {"field": "sensory_load", "op": "gte", "value": 0.7}
+      ],
+      "phi": -0.20
+    },
+    {
+      "id": "PH-005",
+      "comment": "Гибкий график + маленькие дети → синергия (совместимость с уходом)",
+      "when": [
+        {"field": "family_constraints", "op": "contains", "value": "small_children"},
+        {"field": "schedule", "op": "in", "value": ["flexible", "part_time"]}
+      ],
+      "phi": 0.10
+    },
+    {
+      "id": "PH-006",
+      "comment": "Дети/иждивенцы + командировки >60% → конфликт",
+      "when": [
+        {"field": "family_constraints", "op": "neq", "value": "none"},
+        {"field": "business_trips_required", "op": "gte", "value": 0.6}
+      ],
+      "phi": -0.15
+    },
+    {
+      "id": "PH-007",
+      "comment": "Обучение за счёт компании + смена профессии/высокая обучаемость → синергия",
+      "when": [
+        {"field": "training_offered", "op": "eq", "value": true},
+        {"field": "learning_appetite", "op": "gte", "value": 0.6}
+      ],
+      "phi": 0.12
+    },
+    {
+      "id": "PH-008",
+      "comment": "Глубокая специализация роли + профиль deep → синергия",
+      "when": [
+        {"field": "career_trajectory", "op": "eq", "value": "deep"},
+        {"field": "trajectory_offered", "op": "eq", "value": "deep"}
+      ],
+      "phi": 0.08
+    },
+    {
+      "id": "PH-009",
+      "comment": "Интересы кандидата пересекаются с продуктом (≥2 тега) → синергия культуры",
+      "when": [
+        {"field": "interests_overlap_count", "op": "gte", "value": 2}
+      ],
+      "phi": 0.06
+    },
+    {
+      "id": "PH-010",
+      "comment": "Ценит стабильность + ранняя стадия стартапа → конфликт",
+      "when": [
+        {"field": "motivation_stability", "op": "gte", "value": 0.7},
+        {"field": "stage_risk", "op": "gte", "value": 0.7}
+      ],
+      "phi": -0.12
+    },
+    {
+      "id": "PH-011",
+      "comment": "Потребность в автономии + низкий микроменеджмент → синергия",
+      "when": [
+        {"field": "autonomy_preference", "op": "gte", "value": 0.7},
+        {"field": "micromanagement_degree", "op": "lte", "value": 0.3}
+      ],
+      "phi": 0.08
+    },
+    {
+      "id": "PH-012",
+      "comment": "Потребность в структуре + высокая неопределённость роли → конфликт",
+      "when": [
+        {"field": "structure_need", "op": "gte", "value": 0.7},
+        {"field": "role_ambiguity", "op": "gte", "value": 0.7}
+      ],
+      "phi": -0.12
+    },
+    {
+      "id": "PH-013",
+      "comment": "Сенсорная чувствительность + open-space нагрузка → конфликт (усилен k=3)",
+      "when": [
+        {"field": "sensory_sensitivity", "op": "gte", "value": 0.6},
+        {"field": "sensory_load", "op": "gte", "value": 0.7}
+      ],
+      "phi": -0.18
+    },
+    {
+      "id": "PH-014",
+      "comment": "Тихая среда + чувствительность → синергия подкрепления",
+      "when": [
+        {"field": "sensory_sensitivity", "op": "gte", "value": 0.6},
+        {"field": "sensory_load", "op": "lte", "value": 0.2}
+      ],
+      "phi": 0.10
+    },
+    {
+      "id": "PH-015",
+      "comment": "Низкая стрессоустойчивость + ночные смены → конфликт",
+      "when": [
+        {"field": "stress_tolerance", "op": "lte", "value": 0.4},
+        {"field": "schedule", "op": "in", "value": ["night"]}
+      ],
+      "phi": -0.12
+    },
+    {
+      "id": "PH-016",
+      "comment": "Монозадачный профиль + мультизадачная роль → конфликт",
+      "when": [
+        {"field": "multitask_preference", "op": "lte", "value": 0.35},
+        {"field": "multitask_intensity", "op": "gte", "value": 0.7}
+      ],
+      "phi": -0.10
+    },
+    {
+      "id": "PH-017",
+      "comment": "Мультизадачность кандидата + разнообразная роль → синергия",
+      "when": [
+        {"field": "multitask_preference", "op": "gte", "value": 0.65},
+        {"field": "multitask_intensity", "op": "between", "value": [0.5, 0.9]}
+      ],
+      "phi": 0.07
+    },
+    {
+      "id": "PH-018",
+      "comment": "Async-коммуникация предпочтительна + async-режим компании → синергия",
+      "when": [
+        {"field": "communication_style", "op": "eq", "value": "async"},
+        {"field": "communication_mode", "op": "eq", "value": "async"}
+      ],
+      "phi": 0.06
+    },
+    {
+      "id": "PH-019",
+      "comment": "Sync-предпочтение + sync-компания → синергия",
+      "when": [
+        {"field": "communication_style", "op": "eq", "value": "sync"},
+        {"field": "communication_mode", "op": "eq", "value": "sync"}
+      ],
+      "phi": 0.05
+    },
+    {
+      "id": "PH-020",
+      "comment": "Менторство в роли + траектория management → синергия роста",
+      "when": [
+        {"field": "career_trajectory", "op": "eq", "value": "management"},
+        {"field": "trajectory_offered", "op": "eq", "value": "management"}
+      ],
+      "phi": 0.08
+    },
+    {
+      "id": "PH-021",
+      "comment": "Готовность к релокации + релокационный пакет в вакансии → синергия (снижает и r)",
+      "when": [
+        {"field": "relocation", "op": "in", "value": ["yes", "yes_with_package"]},
+        {"field": "relocation_supported", "op": "eq", "value": true}
+      ],
+      "phi": 0.09
+    },
+    {
+      "id": "PH-022",
+      "comment": "Hyperfocus-профиль (СДВГ) + глубокая специализация роли → синергия",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "adhd"},
+        {"field": "trajectory_offered", "op": "eq", "value": "deep"}
+      ],
+      "phi": 0.08
+    },
+    {
+      "id": "PH-023",
+      "comment": "Дислексия + роль с интенсивной письменной коммуникацией → мягкий конфликт (учёт через загрузку)",
+      "when": [
+        {"field": "neuro_profile", "op": "contains", "value": "dyslexia"},
+        {"field": "communication_mode", "op": "eq", "value": "async"}
+      ],
+      "phi": -0.06
+    },
+    {
+      "id": "PH-024",
+      "comment": "Релокация нужна вакансии, но кандидат не готов → конфликт ресурса (не блок, если формат remote допустим)",
+      "when": [
+        {"field": "relocation_required", "op": "eq", "value": true},
+        {"field": "relocation", "op": "eq", "value": "no"},
+        {"field": "work_format", "op": "neq", "value": "remote"}
+      ],
+      "phi": -0.20
+    },
+    {
+      "id": "PH-025",
+      "comment": "Полный день + срочность поиска высокая → синергия быстрого закрытия",
+      "when": [
+        {"field": "urgency_months", "op": "lte", "value": 1},
+        {"field": "start_date_required_months", "op": "lte", "value": 1}
+      ],
+      "phi": 0.05
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BL-001",
+      "comment": "must-have навык отсутствует или уровень < 80% требуемого",
+      "kind": "hard_skill_missing",
+      "level_ratio_threshold": 0.8
+    },
+    {
+      "id": "BL-002",
+      "comment": "Формат работы вакансии не входит в допустимые кандидата",
+      "kind": "work_format",
+      "allow_compromise": false
+    },
+    {
+      "id": "BL-003",
+      "comment": "График вакансии не входит в допустимые кандидата (если кандидат не разрешил компромисс)",
+      "kind": "schedule",
+      "allow_compromise": true
+    },
+    {
+      "id": "BL-004",
+      "comment": "Зарплатные вилки не пересекаются и торг не допускается",
+      "kind": "salary",
+      "allow_compromise": true
+    },
+    {
+      "id": "BL-005",
+      "comment": "Нет права работать в требуемой юрисдикции",
+      "kind": "work_permit",
+      "allow_compromise": false
+    },
+    {
+      "id": "BL-006",
+      "comment": "Часовые пояса удалёнки не пересекаются (окно ±3ч) и релокация невозможна",
+      "kind": "tz_window",
+      "allow_compromise": false
+    },
+    {
+      "id": "BL-007",
+      "comment": "Требуемый язык на уровне ниже минимального must-have",
+      "kind": "language_missing",
+      "level_threshold": 0.6,
+      "allow_compromise": false
+    },
+    {
+      "id": "BL-008",
+      "code": "BL-008:sensory",
+      "comment": "Абсолютное сенсорное противопоказание: высокая чувствительность × высокая нагрузка среды (Φ=−∞)",
+      "kind": "sensory_contraindication",
+      "sensitivity_min": 0.8,
+      "load_min": 0.8
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+ "version": 1,
+ "date": "2026-11-12",
+ "comment": "Фиксация калибровки весов по SPEC §7: стартовые веса factors.json воспроизводят все 5 эталонов (см. tests/test_calibration.py), ручные подгонки не потребовались. При изменении весов — обновить версию и записать причину.",
+ "param_weights": {
+  "t": 0.15,
+  "m": 0.1,
+  "f": 0.1,
+  "e": 0.15,
+  "y": 0.25,
+  "g": 0.1,
+  "h": 0.15
+ },
+ "factor_w0": {
+  "hard_skills": 0.95,
+  "experience_years": 0.7,
+  "domain_experience": 0.45,
+  "education_level": 0.3,
+  "languages": 0.6,
+  "portfolio": 0.35,
+  "management_experience": 0.35,
+  "work_format": 0.85,
+  "schedule": 0.8,
+  "employment_type": 0.55,
+  "salary": 0.9,
+  "business_trips": 0.4,
+  "relocation": 0.65,
+  "location": 0.75,
+  "work_permit": 1.0,
+  "commute_max": 0.35,
+  "stress_tolerance": 0.6,
+  "multitask_preference": 0.45,
+  "autonomy_preference": 0.5,
+  "team_size_preference": 0.3,
+  "communication_style": 0.35,
+  "motivation": 0.55,
+  "risk_appetite": 0.35,
+  "sensory_sensitivity": 0.55,
+  "structure_need": 0.45,
+  "learning_appetite": 0.3,
+  "interests": 0.25,
+  "culture_fit": 0.3,
+  "mission_importance": 0.25,
+  "career_trajectory": 0.45,
+  "urgency": 0.5,
+  "start_date": 0.4
+ },
+ "formula": "W_n = w0 · (w_t·t + w_m·m + w_f·f + w_e·e + w_y·y + w_g·g + w_h·h) · R_obj + ε_n; SCORE = (Σ(match·W) − Σr + ΣΦ)/ΣW − ε_total",
+ "history": [
+  {
+   "version": 1,
+   "change": "базовые веса factors.json",
+   "reason": "эталоны TC1–TC5 проходят без подгонки (top-1 ≥ 0.70, порядок и блокировки совпадают)",
+   "test_results": [
+    {
+     "tc": "TC1",
+     "scenario": "Джун-разработчик с СДВГ ищет удалёнку с гибким графиком",
+     "vacancies": {
+      "V1": {
+       "score": 0.8996,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-001",
+        "PH-007",
+        "PH-008",
+        "PH-009",
+        "PH-011",
+        "PH-014",
+        "PH-018",
+        "PH-022"
+       ]
+      },
+      "V2": {
+       "score": 0.7522,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": []
+      },
+      "V3": {
+       "score": 0.6656,
+       "band": "below",
+       "blocked": true,
+       "block_reasons": [
+        "BL-002:work_format"
+       ],
+       "phi_rules_fired": [
+        "PH-013"
+       ]
+      }
+     },
+     "etalon_ok": true
+    },
+    {
+     "tc": "TC2",
+     "scenario": "Сеньор-разработчик готов к релокации с пакетом",
+     "vacancies": {
+      "V1": {
+       "score": 0.7813,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-007",
+        "PH-008",
+        "PH-009",
+        "PH-011",
+        "PH-021"
+       ]
+      },
+      "V2": {
+       "score": 0.7705,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-011"
+       ]
+      },
+      "V3": {
+       "score": 0.796,
+       "band": "below",
+       "blocked": true,
+       "block_reasons": [
+        "BL-004:salary"
+       ],
+       "phi_rules_fired": [
+        "PH-008",
+        "PH-011"
+       ]
+      }
+     },
+     "etalon_ok": true
+    },
+    {
+     "tc": "TC3",
+     "scenario": "Учитель меняет профессию на QA",
+     "vacancies": {
+      "V1": {
+       "score": 0.8865,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-007",
+        "PH-009"
+       ]
+      },
+      "V2": {
+       "score": 0.6717,
+       "band": "below",
+       "blocked": true,
+       "block_reasons": [
+        "BL-001:hard_skills:selenium"
+       ],
+       "phi_rules_fired": []
+      },
+      "V3": {
+       "score": 0.7519,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": []
+      }
+     },
+     "etalon_ok": true
+    },
+    {
+     "tc": "TC4",
+     "scenario": "Мама в декрете ищет part-time удалёнку",
+     "vacancies": {
+      "V1": {
+       "score": 0.903,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-005",
+        "PH-009",
+        "PH-018"
+       ]
+      },
+      "V2": {
+       "score": 0.5702,
+       "band": "below",
+       "blocked": true,
+       "block_reasons": [
+        "BL-002:work_format",
+        "BL-003:schedule"
+       ],
+       "phi_rules_fired": []
+      },
+      "V3": {
+       "score": 0.8208,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-005"
+       ]
+      }
+     },
+     "etalon_ok": true
+    },
+    {
+     "tc": "TC5",
+     "scenario": "Аналитик с аутистическим спектром и высокой сенсорной чувствительностью",
+     "vacancies": {
+      "V1": {
+       "score": 0.8774,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-003",
+        "PH-008",
+        "PH-009",
+        "PH-011",
+        "PH-014",
+        "PH-018"
+       ]
+      },
+      "V2": {
+       "score": 0.763,
+       "band": "strong",
+       "blocked": false,
+       "block_reasons": [],
+       "phi_rules_fired": [
+        "PH-011"
+       ]
+      },
+      "V3": {
+       "score": 0.6898,
+       "band": "below",
+       "blocked": true,
+       "block_reasons": [
+        "BL-008:sensory"
+       ],
+       "phi_rules_fired": [
+        "PH-004",
+        "PH-013",
+        "PH-016"
+       ]
+      }
+     },
+     "etalon_ok": true
+    }
+   ]
+  }
+ ]
+}
